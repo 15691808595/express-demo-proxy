@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>this is title</h1>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script>
+//        $.ajax({
+//            type:'get',
+//            url:'/api',
+//            data:{num:5,type:'all',wd:''},
+//            success:function(data,xhr,statusText){
+//                console.log(data)
+//            }
+//        })
+         /*axios({
+               url:'/api',
+               data:{num:1,type:'all',wd:''},
+               method:'get',
+               headers:{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
+           }).then((res)=>{
+               console.log(res.data);
+           })*/
+const url = '/api/getDiscList'
+
+const data = {
+    g_tk: 1928093487,
+    inCharset: 'utf-8',
+    outCharset: 'utf-8',
+    notice: 0,
+    format: 'json',
+    platform: 'yqq',
+    hostUin: 0,
+    sin: 0,
+    ein: 29,
+    sortId: 5,
+    needNewCode: 0,
+    categoryId: 10000000,
+    rnd: Math.random(),
+}
+axios.get(url, {
+    params: data
+}).then((res) => {
+    console.log(res);
+})
+    </script>
+</body>
+</html>
